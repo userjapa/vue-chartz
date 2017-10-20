@@ -2,7 +2,7 @@
 <div class="container column justify-content-center align-items-center height">
 
   <div class="">
-    <h3>SVG Charts with vue</h3>
+    <h3>Responsive SVG Charts with vue</h3>
   </div>
 
   <div class="box-chartz">
