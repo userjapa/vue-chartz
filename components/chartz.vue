@@ -2,7 +2,7 @@
 <div class="container">
 
   <div class="mark">
-    <svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 100" width="500" height="100">
     <polyline class="line color1" :points="data1"/>
     <polyline class="line color2" :points="data2"/>
     <circle class="pcolor1" v-for="x in pointsData1" :cx="x[0]" :cy="x[1]"  r="5" fill="#333" />
@@ -85,7 +85,7 @@ export default {
 
 .pcolor1,
 .pcolor2 {
-    animation-name: teste;
+    animation-name: show;
     animation-duration: 0.5s;
     animation-delay: 1s;
     animation-fill-mode: backwards;
@@ -116,7 +116,6 @@ export default {
 svg {
     border: 1px solid #ddd;
     position: relative;
-    width: 500px;
     max-width: 100%;
     height: 100px;
 }
