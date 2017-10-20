@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="">
 
   <div class="mark">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 100" width="500" height="100">
@@ -16,6 +16,9 @@
 <script>
 export default {
   name: 'chartz',
+  props: {
+
+  },
   data() {
     return {
       data1: ['0,50', '50,50', '100,30', '150,80', '400,20', '500,50'],
@@ -114,16 +117,8 @@ export default {
     }
 }
 svg {
-    border: 1px solid #ddd;
     position: relative;
     max-width: 100%;
     height: 100px;
-}
-.container {
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
 }
 </style>
