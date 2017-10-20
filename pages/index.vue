@@ -14,10 +14,11 @@
   </div>
 
   <div class="box-chartz">
+    <lineChartz type="circle" percent="86" :strokeWidth="1"></lineChartz>
+  </div>
 
-    <lineChartz type="circle" percent="80" :strokeWidth="1"></lineChartz>
-    <lineChartz type="circle" percent="66" :strokeWidth="3"></lineChartz>
-
+  <div class="box-chartz">
+    <lineChartz type="circle" percent="47" :strokeWidth="3"></lineChartz>
   </div>
 
 
