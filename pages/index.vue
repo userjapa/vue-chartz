@@ -47,7 +47,7 @@ export default {
 @import './assets/css/main.scss';
 .box-chartz {
   width: 500px;
-  max-width: 100%;
+  max-width: 90%;
   margin-top: 50px;
   border: 1px solid #ddd;
 

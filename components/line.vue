@@ -103,7 +103,7 @@ export default {
   align-items: center;
   animation: progressbg 1s 1s ease-out backwards;
   cursor: pointer;
-  transition: .5s;
+  transition: .1s;
   &:hover {
     transform: scale(1.5, 1.5);
   }
