@@ -1,12 +1,12 @@
 module.exports = {
   router: {
-    base: '/chartz/'
+    base: './'
   },
   css: [
     'node_modules/the-grid-flexbox/css/the-grid.min.css'
   ],
   head: {
-    title: 'Chartz',
+    title: 'Vue Chartz',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1' },
