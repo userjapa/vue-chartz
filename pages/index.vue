@@ -10,7 +10,7 @@
   </div>
 
    <div class="box-chartz">
-    <lineProgress type="line" :data="data" :width="500" :height="100"></lineProgress>
+    <lineProgress type="line" :data="data" :height="100"></lineProgress>
   </div>
 
 
