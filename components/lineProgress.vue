@@ -4,7 +4,7 @@
   <div v-if="type == 'line'" class="mark" style="width: 100%; max-width: 100%">
     <svg xmlns="http://www.w3.org/2000/svg" class="mark" xmlns:xlink="http://www.w3.org/1999/xlink" :viewBox="'0 0 ' + width + ' ' + height">
 
-      <polyline class="line color1" :points="data"/>
+      <polyline class="line color1" :points="fullData"/>
 
 
       <circle class="pcolor1" v-for="x in pointsData" :cx="x[0]" :cy="x[1]"  r="5" fill="#333" />
@@ -43,26 +43,34 @@ export default {
     return {
       pointsData: [],
       line: [],
-      dataSize: 0
+      dataSize: 0,
+      fullData: []
     }
   },
 
   mounted() {
-    this.dataSize = this.data.length
-    console.log("size: " + this.dataSize)
-
-
     setLine: {
-      this.data.map((pointsData, index) => {
+      this.fullData.map((pointsData, index) => {
         console.log(pointsData)
       })
     }
 
     convert: {
-      this.data.map((data, index) => {
+      this.fullData.forEach((data, index) => {
         this.pointsData.push(data.split(","))
-        return
+        console.log(this.pointsData[index])
       })
+    }
+  },
+
+  created() {
+    this.dataSize = this.data.length
+    console.log("size: " + this.dataSize)
+
+    let quociente = (this.dataSize * 100)/(this.dataSize)
+
+    for (let i = 0; i < this.dataSize; i++) {
+        this.fullData.push(`${quociente*i},${this.data[i]}`)
     }
   }
 
