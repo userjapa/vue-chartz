@@ -33,10 +33,12 @@ export default {
     convert: {
       this.data1.map((data1, index) => {
         this.pointsData1.push(data1.split(","))
+        return
       })
 
       this.data2.map((data2, index) => {
         this.pointsData2.push(data2.split(","))
+        return
       })
     }
 
