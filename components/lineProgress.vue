@@ -6,7 +6,7 @@
 
       <polyline class="line color1" :points="fullData"/>
 
-      <circle class="pcolor1" v-for="x in pointsData" :cx="x[0]" :cy="x[1]"  r="2" fill="#333" />
+      <circle class="pcolor1" v-for="x in pointsData" :cx="x[0]" :cy="x[1]"  :r="raio" fill="#333" />
     </svg>
 
   </div>
@@ -32,7 +32,12 @@ export default {
       type: Number
     },
     strokeWidth: {
-      type: Number
+      type: Number,
+      default: 1
+    },
+    raio: {
+      type: Number,
+      default: 2
     }
   },
 
@@ -77,11 +82,10 @@ export default {
 <style lang="scss" scoped>
 .line {
     fill: none;
-    stroke-width: 1;
+    // stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 10;
-    opacity: 0.7;
     animation-name: show;
     animation-duration: 1s;
     animation-fill-mode: backwards;
@@ -91,7 +95,6 @@ export default {
     z-index: 1;
     cursor: pointer;
     &:hover {
-        opacity: 1;
     }
 }
 @keyframes show {
@@ -115,10 +118,8 @@ export default {
     animation-timing-function: ease-in;
     transition: 0.1s;
     transform-origin: 50%;
-    opacity: 0.7;
     cursor: pointer;
     &:hover {
-        opacity: 1;
         transform: scale(1.5, 1.5);
     }
 }

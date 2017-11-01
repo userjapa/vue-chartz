@@ -10,7 +10,7 @@
   </div>
 
    <div class="box-chartz">
-    <lineProgress type="line" :strokeWidth="5" :data="data" :height="100"></lineProgress>
+    <lineProgress type="line" :stroke-width="2" :raio="3" :data="data" :height="100"></lineProgress>
   </div>
 
 
@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      data: [50, 80, 10]
+      data: [50, 80, 10, 70, 60]
     }
   }
 }
