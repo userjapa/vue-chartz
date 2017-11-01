@@ -68,21 +68,32 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: progressbg 1s 1s ease-out backwards;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: progressbg 1s 1s ease-out backwards;
+          animation: progressbg 1s 1s ease-out backwards;
   cursor: pointer;
+  -webkit-transition: .1s;
   transition: .1s;
   &:hover {
-    transform: scale(1.5, 1.5);
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
   }
 }
 
 .circle {
   fill: none;
   stroke-linecap: round;
-  animation: progress 1s 1s ease-out backwards;
+  -webkit-animation: progress 1s 1s ease-out backwards;
+          animation: progress 1s 1s ease-out backwards;
+  -webkit-transition: .5s;
   transition: .5s;
   position: relative;
   background: red;
@@ -92,14 +103,26 @@ export default {
   stroke: #ddd;
   fill: none;
   stroke-linecap: round;
+  -webkit-transition: .5s;
   transition: .5s;
-  animation: progressbg 1s ease-out forwards;
+  -webkit-animation: progressbg 1s ease-out forwards;
+          animation: progressbg 1s ease-out forwards;
   z-index: 1;
 
+}
+@-webkit-keyframes progressbg {
+  0% {
+    opacity: 0
+  }
 }
 @keyframes progressbg {
   0% {
     opacity: 0
+  }
+}
+@-webkit-keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
   }
 }
 @keyframes progress {
@@ -118,6 +141,7 @@ export default {
 svg {
     position: relative;
     width: 100%;
+    -webkit-transition: .5s;
     transition: .5s;
     cursor: pointer;
 }

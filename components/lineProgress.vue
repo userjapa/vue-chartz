@@ -2,17 +2,14 @@
 <div>
 
   <div v-if="type == 'line'" class="mark" style="width: 100%; max-width: 100%">
-    <svg xmlns="http://www.w3.org/2000/svg" class="mark" xmlns:xlink="http://www.w3.org/1999/xlink" :viewBox="'0 0 ' + width + ' ' + height">
+    <svg xmlns="http://www.w3.org/2000/svg" class="mark" xmlns:xlink="http://www.w3.org/1999/xlink" :viewBox="'0 0 ' + (dataSize - 1) * 100 + ' ' + height" :style="{ strokeWidth: strokeWidth }">
 
       <polyline class="line color1" :points="fullData"/>
 
-
-      <circle class="pcolor1" v-for="x in pointsData" :cx="x[0]" :cy="x[1]"  r="5" fill="#333" />
+      <circle class="pcolor1" v-for="x in pointsData" :cx="x[0]" :cy="x[1]"  r="2" fill="#333" />
     </svg>
 
   </div>
-  {{dataSize}}
-
 
 </div>
 </template>
@@ -28,13 +25,13 @@ export default {
       type: Array,
       default: []
     },
-    width: {
-      type: Number
-    },
     height: {
       type: Number
     },
     size: {
+      type: Number
+    },
+    strokeWidth: {
       type: Number
     }
   },
@@ -56,7 +53,7 @@ export default {
     }
 
     convert: {
-      this.fullData.forEach((data, index) => {
+      this.fullData.map((data, index) => {
         this.pointsData.push(data.split(","))
         console.log(this.pointsData[index])
       })
@@ -80,7 +77,7 @@ export default {
 <style lang="scss" scoped>
 .line {
     fill: none;
-    stroke-width: 5;
+    stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 10;
@@ -90,7 +87,7 @@ export default {
     animation-fill-mode: backwards;
     animation-timing-function: ease-in;
     transition: 0.5s;
-    transform-origin: 50%;
+    transform-origin: center center;
     z-index: 1;
     cursor: pointer;
     &:hover {
