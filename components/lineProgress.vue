@@ -2,7 +2,7 @@
 <div>
 
   <div v-if="type == 'line'" class="mark" style="width: 100%; max-width: 100%">
-    <svg xmlns="http://www.w3.org/2000/svg" class="mark" xmlns:xlink="http://www.w3.org/1999/xlink" :viewBox="'0 0 ' + (dataSize - 1) * 100 + ' ' + height" :style="{ strokeWidth: strokeWidth }">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mark" xmlns:xlink="http://www.w3.org/1999/xlink" :viewBox="'0 0 ' + (dataSize - 1) * 100 + ' ' + height" :style="{ strokeWidth: strokeWidth }">
 
       <polyline class="line color1" :points="fullData"/>
 
@@ -50,7 +50,16 @@ export default {
     }
   },
 
-  mounted() {
+  created() {
+    this.dataSize = this.data.length
+    console.log("size: " + this.dataSize)
+
+    let quociente = (this.dataSize * 100)/(this.dataSize)
+
+    for (let i = 0; i < this.dataSize; i++) {
+        this.fullData.push(`${quociente*i},${this.data[i]}`)
+    }
+
     setLine: {
       this.fullData.map((pointsData, index) => {
         console.log(pointsData)
@@ -63,17 +72,7 @@ export default {
         console.log(this.pointsData[index])
       })
     }
-  },
 
-  created() {
-    this.dataSize = this.data.length
-    console.log("size: " + this.dataSize)
-
-    let quociente = (this.dataSize * 100)/(this.dataSize)
-
-    for (let i = 0; i < this.dataSize; i++) {
-        this.fullData.push(`${quociente*i},${this.data[i]}`)
-    }
   }
 
 }
